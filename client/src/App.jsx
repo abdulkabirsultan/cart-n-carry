@@ -10,8 +10,9 @@ const App = () => {
         <Routes>
           <Route path='/' element={<SharedLayout />}>
             <Route index element={<Home />} />
+            <Route path='/products' element={<h1>hhh</h1>} />
           </Route>
-        </Routes>{' '}
+        </Routes>
       </main>
     </BrowserRouter>
   );
