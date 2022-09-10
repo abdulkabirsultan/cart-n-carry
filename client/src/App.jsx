@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import SharedLayout from './Routes/SharedLayout';
 import Home from './Routes/Home';
+import Products from './components/Products/Products';
 const App = () => {
   return (
     <BrowserRouter>
@@ -10,7 +10,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path='/products' element={<h1>hhh</h1>} />
+            <Route path='/products' element={<Products />} />
           </Route>
         </Routes>
       </main>

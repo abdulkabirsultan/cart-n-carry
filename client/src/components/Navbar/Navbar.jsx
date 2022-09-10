@@ -1,19 +1,22 @@
 import React from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
-import { FaCartPlus, FaSignInAlt } from 'react-icons/fa';
+import { FaBars, FaCartPlus, FaSignInAlt } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-      <Nav className='justify-around shadow-md shadow-black'>
+      <Nav className='justify-around  items-center shadow-md shadow-black'>
+        <Button className='md:hidden'>
+          <FaBars />
+        </Button>
         <Nav.Start className='p-3'>
-          <Link to='/'>
+          <Link to='/' className='whitespace-nowrap'>
             <h2>THE STORE</h2>
           </Link>
-        </Nav.Start>
+        </Nav.Start>{' '}
         <Nav.Center>
           <Menu className='p-2 '>
-            <div className='menu-horizontal space-x-3'>
+            <div className='hidden md:menu-horizontal space-x-3'>
               <Menu.Item>
                 <NavLink
                   className={({ isActive }) =>
@@ -65,12 +68,12 @@ const Navbar = () => {
             </div>
           </Menu>
         </Nav.Center>
-        <Nav.End className='space-x-5'>
+        <Nav.End className='lg:space-x-5 space-x-3 '>
           <Link to='/cart'>
             <Button className='relative space-x-1'>
               <FaCartPlus className='text-xl ' />
-              <span>Cart</span>
-              <Button className='absolute -top-4 -left-5 bg-orange-600 text-white btn-sm'>
+              <span className='hidden md:inline-block'>Cart</span>
+              <Button className='absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
                 0
               </Button>
             </Button>

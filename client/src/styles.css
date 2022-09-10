@@ -2687,8 +2687,20 @@ html {
   left: -1.25rem;
 }
 
+.-left-6 {
+  left: -1.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .flex {
@@ -2767,6 +2779,14 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .border-b-2 {
@@ -2914,12 +2934,184 @@ html {
   }
 }
 
+@media (min-width: 640px) {
+  .btn.loading.sm\:btn-sm:before {
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+
+  .sm\:btn-sm {
+    height: 2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    min-height: 2rem;
+    font-size: 0.875rem;
+  }
+
+   {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+    padding: 0px;
+  }
+
+  .sm\:inline-block {
+    display: inline-block;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:justify-around {
+    justify-content: space-around;
+  }
+
+  .sm\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:menu-horizontal {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .md\:menu-horizontal :where(li) {
+    flex-direction: row;
+  }
+
+  .md\:menu-horizontal > :where(li) > :where(ul) {
+    top: 100%;
+    left: initial;
+  }
+
+  .md\:menu-horizontal :where(li.bordered > *) {
+    border-left-width: 0px;
+    border-bottom-width: 4px;
+  }
+
+  .md\:menu-horizontal > :where(li:first-child) {
+    border-top-left-radius: inherit;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: inherit;
+  }
+
+  .md\:menu-horizontal > :where(li:first-child) > :where(*:not(ul)) {
+    border-top-left-radius: inherit;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: inherit;
+  }
+
+  .md\:menu-horizontal > :where(li:last-child) {
+    border-top-left-radius: unset;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: unset;
+  }
+
+  .md\:menu-horizontal > :where(li:last-child) > :where(*:not(ul)) {
+    border-top-left-radius: unset;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: unset;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+
 @media (min-width: 1024px) {
+  .lg\:menu-horizontal {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .lg\:menu-horizontal :where(li) {
+    flex-direction: row;
+  }
+
+  .lg\:menu-horizontal > :where(li) > :where(ul) {
+    top: 100%;
+    left: initial;
+  }
+
+  .lg\:menu-horizontal :where(li.bordered > *) {
+    border-left-width: 0px;
+    border-bottom-width: 4px;
+  }
+
+  .lg\:menu-horizontal > :where(li:first-child) {
+    border-top-left-radius: inherit;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: inherit;
+  }
+
+  .lg\:menu-horizontal > :where(li:first-child) > :where(*:not(ul)) {
+    border-top-left-radius: inherit;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: inherit;
+  }
+
+  .lg\:menu-horizontal > :where(li:last-child) {
+    border-top-left-radius: unset;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: unset;
+  }
+
+  .lg\:menu-horizontal > :where(li:last-child) > :where(*:not(ul)) {
+    border-top-left-radius: unset;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: unset;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
   .lg\:flex {
     display: flex;
   }
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .lg\:space-x-5 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
