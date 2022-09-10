@@ -1,0 +1,20 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import SharedLayout from './Routes/SharedLayout';
+import Home from './Routes/Home';
+const App = () => {
+  return (
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path='/' element={<SharedLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>{' '}
+      </main>
+    </BrowserRouter>
+  );
+};
+
+export default App;
