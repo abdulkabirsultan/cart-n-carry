@@ -13,11 +13,11 @@ const Products = () => {
     return <h1>no Products available</h1>;
   }
   return (
-    <section className='grid md:grid-cols-3 grid-cols-1 gap-4 py-5 '>
+    <section className='grid md:grid-cols-4 grid-cols-1 gap-4 py-5 '>
       <aside className='hidden md:block h-screen scrollbar overflow-y-scroll'>
         <Categories />
       </aside>
-      <article className='col-span-2 w-full '>
+      <article className='col-span-3 w-full '>
         {products?.map((product) => {
           return <Product key={product._id} {...product} />;
         })}{' '}
