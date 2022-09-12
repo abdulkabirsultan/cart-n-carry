@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
 import { FaBars, FaCartPlus, FaSignInAlt } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import useScrollDirection from './ScrollDirection';
+import Sidebar from './Sidebar';
 const Navbar = () => {
+  const [isSideBar, setIsSideBar] = useState(false);
+  const direction = useScrollDirection();
+
   return (
-    <div>
-      <Nav className='justify-around  items-center shadow-md shadow-black'>
-        <Button className='md:hidden'>
+    <div
+      className={`sticky h-16 ${
+        direction === 'show' ? 'top-0 backdrop-blur-sm' : '-top-[67]'
+      } z-20 transition-all duration-1000`}
+    >
+      {isSideBar && <Sidebar setIsSideBar={setIsSideBar} />}
+      <Nav
+        className={`justify-around navbar  items-center shadow-md shadow-black`}
+      >
+        <Button className='md:hidden' onClick={() => setIsSideBar(!isSideBar)}>
           <FaBars />
         </Button>
         <Nav.Start className='p-3'>
@@ -15,8 +27,8 @@ const Navbar = () => {
           </Link>
         </Nav.Start>{' '}
         <Nav.Center>
-          <Menu className='p-2 '>
-            <div className='hidden md:menu-horizontal space-x-3'>
+          <Menu className='p-[0px] hidden  md:flex'>
+            <div className='menu-horizontal space-x-3'>
               <Menu.Item>
                 <NavLink
                   className={({ isActive }) =>
@@ -73,9 +85,9 @@ const Navbar = () => {
             <Button className='relative space-x-1'>
               <FaCartPlus className='text-xl ' />
               <span className='hidden md:inline-block'>Cart</span>
-              <Button className='absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
+              <div className=' btn absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
                 0
-              </Button>
+              </div>
             </Button>
           </Link>
           <Link to='/auth'>
