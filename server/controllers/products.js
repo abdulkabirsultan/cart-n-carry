@@ -7,12 +7,19 @@ export const getAllProducts = async (req, res) => {
   const tPage = page || 1;
   const skip = tLimit * (tPage - 1);
   const products = await Products.find().limit(tLimit).skip(skip);
+  const totalProducts = await Products.countDocuments();
   if (!products.length) {
     return res.send('No products available');
   }
   res
     .status(200)
-    .json({ products, total: products.length, skip, limit: tLimit });
+    .json({
+      products,
+      total: products.length,
+      skip,
+      limit: tLimit,
+      totalProducts,
+    });
 };
 
 export const getCategories = async (req, res) => {
