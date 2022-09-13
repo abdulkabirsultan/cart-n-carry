@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SharedLayout from './Routes/SharedLayout';
@@ -17,7 +18,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <main>
+      <main className='md:text-lg '>
         <Routes>
           <Route path='/' element={<SharedLayout />}>
             <Route index element={<Home />} />
