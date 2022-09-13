@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
 import { FaBars, FaCartPlus, FaSignInAlt } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div
       className={`sticky h-16 ${
-        direction === 'show' ? 'top-0 backdrop-blur-sm' : '-top-[67]'
+        direction === 'show' ? 'top-0 backdrop-blur' : '-top-[67]'
       } z-20 transition-all duration-1000`}
     >
       {isSideBar && <Sidebar setIsSideBar={setIsSideBar} />}
@@ -84,7 +84,7 @@ const Navbar = () => {
           <Link to='/cart'>
             <Button className='relative space-x-1'>
               <FaCartPlus className='text-xl ' />
-              <span className='hidden md:inline-block'>Cart</span>
+              <span className='hidden lg:inline-block'>Cart</span>
               <div className=' btn absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
                 0
               </div>
