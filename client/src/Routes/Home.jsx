@@ -1,9 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import Products from '../components/Products/Products';
+import Search from '../components/Search/Search';
 
 const Home = () => {
-  return <Products />;
+  return (
+    <>
+      <Search />
+    </>
+  );
 };
 
 export default Home;
