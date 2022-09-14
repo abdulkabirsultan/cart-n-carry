@@ -18,6 +18,7 @@ const Categories = () => {
       const catName = category.split(' ').join('-');
       dispatch(getProductsByCategory(category));
       navigate(`/products/category/${catName}`);
+      return;
     }
   };
   return (

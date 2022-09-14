@@ -36,9 +36,12 @@ export const getSingleProduct = async (req, res) => {
 };
 
 export const getProductBySearch = async (req, res) => {
-  const { name } = req.query;
-  const search = new RegExp(name, 'i');
-  const products = await Products.find({ title: search });
+  const { search } = req.query;
+  const query = new RegExp(search, 'ig');
+  console.log(query);
+  const products = await Products.find({
+    $or: [{ title: query }, { description: query }, { category: query }],
+  });
 
   res.status(200).json({ products, nbHits: products?.length });
 };

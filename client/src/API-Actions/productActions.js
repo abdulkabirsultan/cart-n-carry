@@ -39,3 +39,16 @@ export const getProductsByCategory = createAsyncThunk(
     }
   }
 );
+
+export const getProductBySearch = createAsyncThunk(
+  'getBySearch',
+  async (searchQuery, thunkAPI) => {
+    try {
+      const { data } = await API(`/search?search=${searchQuery}`);
+      return data;
+    } catch (error) {
+      console.log(error.response);
+      thunkAPI.rejectWithValue('something went wrong');
+    }
+  }
+);
