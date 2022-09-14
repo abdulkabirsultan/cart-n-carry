@@ -636,7 +636,7 @@ export default [
     id: 34,
     title: 'Plastic Table',
     description:
-      'V﻿ery good quality plastic table for multi purpose now in reasonable price',
+      'Very good quality plastic table for multi purpose now in reasonable price',
     price: 50,
     discountPercentage: 4,
     rating: 4.01,
@@ -776,7 +776,7 @@ export default [
     rating: 4.65,
     stock: 21,
     brand: 'RED MICKY MOUSE..',
-    category: 'womens-dresses',
+    category: 'womens dresses',
     thumbnail: 'https://dummyjson.com/image/i/products/41/thumbnail.webp',
     images: [
       'https://dummyjson.com/image/i/products/41/1.jpg',
@@ -796,7 +796,7 @@ export default [
     rating: 4.05,
     stock: 148,
     brand: 'Digital Printed',
-    category: 'womens-dresses',
+    category: 'womens dresses',
     thumbnail: 'https://dummyjson.com/image/i/products/42/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/42/1.png',
@@ -816,7 +816,7 @@ export default [
     rating: 4.31,
     stock: 150,
     brand: 'Ghazi Fabric',
-    category: 'womens-dresses',
+    category: 'womens dresses',
     thumbnail: 'https://dummyjson.com/image/i/products/43/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/43/1.jpg',
@@ -836,7 +836,7 @@ export default [
     rating: 4.03,
     stock: 2,
     brand: 'Ghazi Fabric',
-    category: 'womens-dresses',
+    category: 'womens dresses',
     thumbnail: 'https://dummyjson.com/image/i/products/44/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/44/1.jpg',
@@ -856,7 +856,7 @@ export default [
     rating: 4.67,
     stock: 96,
     brand: 'IELGY',
-    category: 'womens-dresses',
+    category: 'womens dresses',
     thumbnail: 'https://dummyjson.com/image/i/products/45/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/45/1.jpg',
@@ -876,7 +876,7 @@ export default [
     rating: 4.14,
     stock: 72,
     brand: 'IELGY fashion',
-    category: 'womens-shoes',
+    category: 'womens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/46/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/46/1.webp',
@@ -896,7 +896,7 @@ export default [
     rating: 4.19,
     stock: 50,
     brand: 'Synthetic Leather',
-    category: 'womens-shoes',
+    category: 'womens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/47/thumbnail.jpeg',
     images: [
       'https://dummyjson.com/image/i/products/47/1.jpg',
@@ -915,7 +915,7 @@ export default [
     rating: 4.02,
     stock: 25,
     brand: 'Sandals Flip Flops',
-    category: 'womens-shoes',
+    category: 'womens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/48/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/48/1.jpg',
@@ -935,7 +935,7 @@ export default [
     rating: 4.72,
     stock: 107,
     brand: 'Maasai Sandals',
-    category: 'womens-shoes',
+    category: 'womens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/49/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/49/1.jpg',
@@ -954,7 +954,7 @@ export default [
     rating: 4.33,
     stock: 46,
     brand: 'Arrivals Genuine',
-    category: 'womens-shoes',
+    category: 'womens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/50/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/50/1.jpeg',
@@ -972,7 +972,7 @@ export default [
     rating: 4.26,
     stock: 132,
     brand: 'Vintage Apparel',
-    category: 'mens-shirts',
+    category: 'mens shirts',
     thumbnail: 'https://dummyjson.com/image/i/products/51/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/51/1.png',
@@ -991,7 +991,7 @@ export default [
     rating: 4.52,
     stock: 128,
     brand: 'FREE FIRE',
-    category: 'mens-shirts',
+    category: 'mens shirts',
     thumbnail: 'https://dummyjson.com/image/i/products/52/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/52/1.png',
@@ -1010,7 +1010,7 @@ export default [
     rating: 4.89,
     stock: 6,
     brand: 'Vintage Apparel',
-    category: 'mens-shirts',
+    category: 'mens shirts',
     thumbnail: 'https://dummyjson.com/image/i/products/53/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/53/1.webp',
@@ -1030,7 +1030,7 @@ export default [
     rating: 4.62,
     stock: 136,
     brand: 'The Warehouse',
-    category: 'mens-shirts',
+    category: 'mens shirts',
     thumbnail: 'https://dummyjson.com/image/i/products/54/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/54/1.jpg',
@@ -1049,7 +1049,7 @@ export default [
     rating: 4.9,
     stock: 122,
     brand: 'The Warehouse',
-    category: 'mens-shirts',
+    category: 'mens shirts',
     thumbnail: 'https://dummyjson.com/image/i/products/55/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/55/1.jpg',
@@ -1069,7 +1069,7 @@ export default [
     rating: 4.38,
     stock: 6,
     brand: 'Sneakers',
-    category: 'mens-shoes',
+    category: 'mens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/56/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/56/1.jpg',
@@ -1090,7 +1090,7 @@ export default [
     rating: 4.91,
     stock: 20,
     brand: 'Rubber',
-    category: 'mens-shoes',
+    category: 'mens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/57/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/57/1.jpg',
@@ -1110,7 +1110,7 @@ export default [
     rating: 4.41,
     stock: 68,
     brand: 'The Warehouse',
-    category: 'mens-shoes',
+    category: 'mens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/58/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/58/1.jpg',
@@ -1130,7 +1130,7 @@ export default [
     rating: 4.33,
     stock: 137,
     brand: 'Sneakers',
-    category: 'mens-shoes',
+    category: 'mens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/59/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/59/1.jpg',
@@ -1150,7 +1150,7 @@ export default [
     rating: 4.55,
     stock: 129,
     brand: 'Sneakers',
-    category: 'mens-shoes',
+    category: 'mens shoes',
     thumbnail: 'https://dummyjson.com/image/i/products/60/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/60/1.jpg',
@@ -1168,7 +1168,7 @@ export default [
     rating: 4.63,
     stock: 91,
     brand: 'Naviforce',
-    category: 'mens-watches',
+    category: 'mens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/61/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/61/1.jpg',
@@ -1186,7 +1186,7 @@ export default [
     rating: 4.05,
     stock: 95,
     brand: 'SKMEI 9117',
-    category: 'mens-watches',
+    category: 'mens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/62/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/62/1.jpg',
@@ -1203,7 +1203,7 @@ export default [
     rating: 4.89,
     stock: 142,
     brand: 'SKMEI 9117',
-    category: 'mens-watches',
+    category: 'mens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/63/thumbnail.webp',
     images: [
       'https://dummyjson.com/image/i/products/63/1.jpg',
@@ -1222,7 +1222,7 @@ export default [
     rating: 4.98,
     stock: 61,
     brand: 'Strap Skeleton',
-    category: 'mens-watches',
+    category: 'mens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/64/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/64/1.jpg',
@@ -1241,7 +1241,7 @@ export default [
     rating: 4.79,
     stock: 94,
     brand: 'Stainless',
-    category: 'mens-watches',
+    category: 'mens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/65/thumbnail.webp',
     images: [
       'https://dummyjson.com/image/i/products/65/1.jpg',
@@ -1260,7 +1260,7 @@ export default [
     rating: 4.79,
     stock: 24,
     brand: 'Eastern Watches',
-    category: 'womens-watches',
+    category: 'womens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/66/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/66/1.jpg',
@@ -1280,7 +1280,7 @@ export default [
     rating: 4.03,
     stock: 46,
     brand: 'Eastern Watches',
-    category: 'womens-watches',
+    category: 'womens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/67/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/67/1.jpg',
@@ -1300,7 +1300,7 @@ export default [
     rating: 4.55,
     stock: 77,
     brand: 'Luxury Digital',
-    category: 'womens-watches',
+    category: 'womens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/68/thumbnail.webp',
     images: [
       'https://dummyjson.com/image/i/products/68/1.jpg',
@@ -1317,7 +1317,7 @@ export default [
     rating: 4.77,
     stock: 89,
     brand: 'Watch Pearls',
-    category: 'womens-watches',
+    category: 'womens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/69/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/69/1.jpg',
@@ -1337,7 +1337,7 @@ export default [
     rating: 4.08,
     stock: 111,
     brand: 'Bracelet',
-    category: 'womens-watches',
+    category: 'womens watches',
     thumbnail: 'https://dummyjson.com/image/i/products/70/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/70/1.jpg',
@@ -1355,7 +1355,7 @@ export default [
     rating: 4.71,
     stock: 17,
     brand: 'LouisWill',
-    category: 'womens-bags',
+    category: 'womens bags',
     thumbnail: 'https://dummyjson.com/image/i/products/71/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/71/1.jpg',
@@ -1374,7 +1374,7 @@ export default [
     rating: 4.91,
     stock: 27,
     brand: 'LouisWill',
-    category: 'womens-bags',
+    category: 'womens bags',
     thumbnail: 'https://dummyjson.com/image/i/products/72/thumbnail.webp',
     images: [
       'https://dummyjson.com/image/i/products/72/1.jpg',
@@ -1394,7 +1394,7 @@ export default [
     rating: 4.18,
     stock: 101,
     brand: 'Bracelet',
-    category: 'womens-bags',
+    category: 'womens bags',
     thumbnail: 'https://dummyjson.com/image/i/products/73/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/73/1.jpg',
@@ -1413,7 +1413,7 @@ export default [
     rating: 4.01,
     stock: 43,
     brand: 'Copenhagen Luxe',
-    category: 'womens-bags',
+    category: 'womens bags',
     thumbnail: 'https://dummyjson.com/image/i/products/74/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/74/1.jpg',
@@ -1433,7 +1433,7 @@ export default [
     rating: 4.93,
     stock: 13,
     brand: 'Steal Frame',
-    category: 'womens-bags',
+    category: 'womens bags',
     thumbnail: 'https://dummyjson.com/image/i/products/75/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/75/1.jpg',
@@ -1452,7 +1452,7 @@ export default [
     rating: 4.61,
     stock: 51,
     brand: 'Darojay',
-    category: 'womens-jewellery',
+    category: 'womens jewellery',
     thumbnail: 'https://dummyjson.com/image/i/products/76/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/76/1.jpg',
@@ -1470,7 +1470,7 @@ export default [
     rating: 4.21,
     stock: 149,
     brand: 'Copenhagen Luxe',
-    category: 'womens-jewellery',
+    category: 'womens jewellery',
     thumbnail: 'https://dummyjson.com/image/i/products/77/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/77/1.jpg',
@@ -1489,7 +1489,7 @@ export default [
     rating: 4.69,
     stock: 9,
     brand: 'Fashion Jewellery',
-    category: 'womens-jewellery',
+    category: 'womens jewellery',
     thumbnail: 'https://dummyjson.com/image/i/products/78/thumbnail.jpg',
     images: ['https://dummyjson.com/image/i/products/78/thumbnail.jpg'],
   },
@@ -1503,7 +1503,7 @@ export default [
     rating: 4.74,
     stock: 16,
     brand: 'Fashion Jewellery',
-    category: 'womens-jewellery',
+    category: 'womens jewellery',
     thumbnail: 'https://dummyjson.com/image/i/products/79/thumbnail.jpg',
     images: ['https://dummyjson.com/image/i/products/79/1.jpg'],
   },
@@ -1517,7 +1517,7 @@ export default [
     rating: 4.59,
     stock: 9,
     brand: 'Cuff Butterfly',
-    category: 'womens-jewellery',
+    category: 'womens jewellery',
     thumbnail: 'https://dummyjson.com/image/i/products/80/thumbnail.jpg',
     images: [
       'https://dummyjson.com/image/i/products/80/1.jpg',

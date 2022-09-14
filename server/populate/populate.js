@@ -9,6 +9,7 @@ const start = async () => {
     console.log('database connected');
     await Products.deleteMany({});
     await Products.insertMany(populate);
+    console.log('populated successfully');
     await app.listen(2000, console.log('server started'));
     process.exit(0);
   } catch (error) {
