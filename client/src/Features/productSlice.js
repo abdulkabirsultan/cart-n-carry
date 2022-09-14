@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   getAllProducts,
   getProductCategories,
+  getProductsByCategory,
 } from '../API-Actions/productActions';
 const initialState = {
   products: [],
@@ -30,6 +31,19 @@ const productReducer = createSlice({
       state.isLoading = false;
       console.log(payload);
     },
+
+    //? Get products by category
+
+    [getProductsByCategory.pending]: (state) => ({ ...state, isLoading: true }),
+    [getProductsByCategory.fulfilled]: (state, { payload }) => ({
+      ...state,
+      isLoading: false,
+      products: payload,
+    }),
+    [getProductsByCategory.rejected]: (state) => ({
+      ...state,
+      isLoading: false,
+    }),
 
     //categories
     [getProductCategories.pending]: (state) => {

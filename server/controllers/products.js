@@ -11,15 +11,13 @@ export const getAllProducts = async (req, res) => {
   if (!products.length) {
     return res.send('No products available');
   }
-  res
-    .status(200)
-    .json({
-      products,
-      total: products.length,
-      skip,
-      limit: tLimit,
-      totalProducts,
-    });
+  res.status(200).json({
+    products,
+    total: products.length,
+    skip,
+    limit: tLimit,
+    totalProducts,
+  });
 };
 
 export const getCategories = async (req, res) => {
@@ -51,7 +49,12 @@ export const getProductsByCategory = async (req, res) => {
   const tPage = page || 1;
   const skip = tLimit * (tPage - 1);
   const { category } = req.params;
-  const products = await Products.find({ category }).limit(tLimit).skip(skip);
+  let products;
+  if (category === 'all') {
+    products = await Products.find().limit(tLimit).skip(skip);
+  } else {
+    products = await Products.find({ category }).limit(tLimit).skip(skip);
+  }
   if (!products.length) {
     throw new NotFoundError(`No ${category} category  found`);
   }

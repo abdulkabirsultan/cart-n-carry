@@ -12,6 +12,7 @@ import {
   FaGlasses,
   FaShoppingBag,
   FaGem,
+  FaGlobe,
 } from 'react-icons/fa';
 import {
   GiFurBoot,
@@ -22,6 +23,7 @@ import {
 } from 'react-icons/gi';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
+  { name: 'all', icon: FaGlobe },
   { name: 'automotive', icon: FaCar },
   { name: 'fragrances', icon: FaPagelines },
   { name: 'furniture', icon: FaChair },

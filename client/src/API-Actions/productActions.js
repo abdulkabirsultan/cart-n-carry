@@ -26,3 +26,16 @@ export const getProductCategories = createAsyncThunk(
     }
   }
 );
+
+export const getProductsByCategory = createAsyncThunk(
+  'productsByCategory',
+  async (category, thunkAPI) => {
+    try {
+      const { data } = await API.get(`/category/${category}`);
+      return data;
+    } catch (error) {
+      console.log(error.response);
+      thunkAPI.rejectWithValue('something went wrong');
+    }
+  }
+);

@@ -3,13 +3,17 @@ import React, { useEffect } from 'react';
 import Products from '../components/Products/Products';
 import Search from '../components/Search/Search';
 import Pagination from '../components/Pagination/Pagination';
-import { useDispatch } from 'react-redux';
+import paginateFunc from '../components/Pagination/toArray';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getAllProducts,
   getProductCategories,
 } from '../API-Actions/productActions';
 import { useState } from 'react';
 const ProductsRoute = () => {
+  const { products } = useSelector((store) => store.products);
+
+  const paginateCount = paginateFunc(products);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +24,7 @@ const ProductsRoute = () => {
     <>
       <Search />
       <Products />
-      <Pagination setPage={setPage} />
+      {paginateCount.length > 5 && <Pagination setPage={setPage} />}
     </>
   );
 };
