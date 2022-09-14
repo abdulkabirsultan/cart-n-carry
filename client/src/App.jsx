@@ -1,21 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SharedLayout from './Routes/SharedLayout';
 import Home from './Routes/Home';
-import { useDispatch } from 'react-redux';
-import { getAllProducts, getProductCategories } from './Features/productSlice';
 import About from './Routes/About';
 import Contact from './Routes/Contact';
 import NotFound from './Routes/NotFound';
 import Products from './Routes/Products';
-const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllProducts());
-    dispatch(getProductCategories());
-  }, []);
 
+const App = () => {
   return (
     <BrowserRouter>
       <main className='md:text-lg '>

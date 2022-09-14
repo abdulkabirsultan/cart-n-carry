@@ -1,12 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Button } from 'react-daisyui';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import paginateFunc from './toArray';
-const Pagination = () => {
+const Pagination = ({ setPage }) => {
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
   const [index, setIndex] = useState(1);
+  useEffect(() => {
+    setPage(index);
+    window.scrollTo({ behavior: 'smooth', top: 0 });
+  }, [index]);
   return (
     <div className='flex justify-center flex-wrap relative items-center my-6'>
       <span
