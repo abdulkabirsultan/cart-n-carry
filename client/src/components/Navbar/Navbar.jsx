@@ -48,7 +48,7 @@ const Navbar = () => {
                       ? 'border-inherit'
                       : 'border-b-[3px] border-b-blue-500'
                   }
-                  to='/products'
+                  to='/products/category/all'
                 >
                   Products
                 </NavLink>

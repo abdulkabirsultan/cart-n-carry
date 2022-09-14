@@ -5,7 +5,8 @@ import Home from './Routes/Home';
 import About from './Routes/About';
 import Contact from './Routes/Contact';
 import NotFound from './Routes/NotFound';
-import Products from './Routes/Products';
+import ProductsRoute from './Routes/Products';
+import Products from './components/Products/Products';
 
 const App = () => {
   return (
@@ -14,9 +15,13 @@ const App = () => {
         <Routes>
           <Route path='/' element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path='/products' element={<Products />} />
+            <Route
+              path='/products/category/:category'
+              element={<ProductsRoute />}
+            />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/products/search' element={<Products />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

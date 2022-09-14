@@ -4,11 +4,22 @@ import { useEffect } from 'react';
 import { Button } from 'react-daisyui';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import paginateFunc from './toArray';
-const Pagination = ({ setPage }) => {
+
+const Pagination = ({ setPage, page }) => {
+  const firstPage = useLocation().search?.split('=')[1];
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
   const [index, setIndex] = useState(1);
+
+  //* when category is set to all
+  useEffect(() => {
+    if (firstPage) {
+      setIndex(parseInt(firstPage));
+      return;
+    }
+  }, [firstPage]);
   useEffect(() => {
     setPage(index);
     window.scrollTo({ behavior: 'smooth', top: 0 });
@@ -28,7 +39,7 @@ const Pagination = ({ setPage }) => {
             <Button
               key={num}
               className={`mr-2 mb-3 md:mb-0 btn-sm ${
-                num === index && 'bg-[#33abdf] hover:bg-[#3ABFF8]'
+                num === page && 'bg-[#33abdf] hover:bg-[#3ABFF8]'
               }`}
               onClick={() => setIndex(num)}
             >

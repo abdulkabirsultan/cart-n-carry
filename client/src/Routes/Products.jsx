@@ -10,21 +10,23 @@ import {
   getProductCategories,
 } from '../API-Actions/productActions';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const ProductsRoute = () => {
   const { products } = useSelector((store) => store.products);
-
+  const navigate = useNavigate();
   const paginateCount = paginateFunc(products);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllProducts(page));
     dispatch(getProductCategories());
+    navigate(`/products/category/all?page=${page}`);
   }, [page]);
   return (
     <>
       <Search />
       <Products />
-      {paginateCount.length > 5 && <Pagination setPage={setPage} />}
+      {paginateCount.length > 5 && <Pagination setPage={setPage} page={page} />}
     </>
   );
 };

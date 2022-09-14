@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'react-daisyui';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   getAllProducts,
   getProductsByCategory,
@@ -8,11 +9,16 @@ import {
 import category from './category';
 const Categories = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const categoryHandler = (category) => {
     if (category.toLowerCase() === 'all') {
       dispatch(getAllProducts());
+      navigate(`/products/category/all?page=1`);
+    } else {
+      const catName = category.split(' ').join('-');
+      dispatch(getProductsByCategory(category));
+      navigate(`/products/category/${catName}`);
     }
-    dispatch(getProductsByCategory(category));
   };
   return (
     <div>
