@@ -39,7 +39,7 @@ const Products = () => {
         } gap-4 mt-10 md:pr-3`}
       >
         {!search && (
-          <aside className=' shadow-xl md:block md:h-screen  scrollbar md:overflow-x-hidden overflow-y-scroll'>
+          <aside className='shadow-xl md:block md:h-screen scrollbar md:overflow-x-hidden overflow-y-scroll'>
             <Categories />
           </aside>
         )}
