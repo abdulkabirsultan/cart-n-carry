@@ -3,6 +3,7 @@ import { Menu, Button } from 'react-daisyui';
 import { FaHome, FaLandmark, FaStore, FaTimes, FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 const Sidebar = ({ setIsSideBar }) => {
+  const handleClick = () => setIsSideBar(false);
   return (
     <div
       className={
@@ -12,6 +13,7 @@ const Sidebar = ({ setIsSideBar }) => {
       <Menu className='h-full menu text-white items-center space-y-7 p-5 '>
         <Menu.Item>
           <NavLink
+            onClick={handleClick}
             className={({ isActive }) =>
               !isActive ? 'border-inherit' : 'border-b-[3px] border-b-blue-500'
             }
@@ -23,10 +25,11 @@ const Sidebar = ({ setIsSideBar }) => {
         </Menu.Item>
         <Menu.Item>
           <NavLink
+            onClick={handleClick}
             className={({ isActive }) =>
               !isActive ? 'border-inherit' : 'border-b-[3px] border-b-blue-500'
             }
-            to='/products'
+            to='/products/category/all'
           >
             <FaStore />
             Products
@@ -34,6 +37,7 @@ const Sidebar = ({ setIsSideBar }) => {
         </Menu.Item>
         <Menu.Item>
           <NavLink
+            onClick={handleClick}
             to='/about'
             className={({ isActive }) =>
               !isActive ? 'border-inherit' : 'border-b-[3px] border-b-blue-500'
@@ -45,6 +49,7 @@ const Sidebar = ({ setIsSideBar }) => {
         </Menu.Item>
         <Menu.Item>
           <NavLink
+            onClick={handleClick}
             to='/contact'
             className={({ isActive }) =>
               !isActive ? 'border-inherit' : 'border-b-[3px] border-b-blue-500'

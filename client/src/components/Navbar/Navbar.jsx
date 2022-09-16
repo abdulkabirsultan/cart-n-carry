@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to='/' className='whitespace-nowrap'>
             <h2>THE STORE</h2>
           </Link>
-        </Nav.Start>{' '}
+        </Nav.Start>
         <Nav.Center>
           <Menu className='p-[0px] hidden  md:flex'>
             <div className='menu-horizontal space-x-3'>

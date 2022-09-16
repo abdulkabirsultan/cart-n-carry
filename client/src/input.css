@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    width: 12px;
+    @apply w-1 md:w-3;
   }
   .scrollbar::-webkit-scrollbar-thumb {
     background-color: #8070d4;
