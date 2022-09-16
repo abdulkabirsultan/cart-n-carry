@@ -4,11 +4,14 @@ import { useEffect } from 'react';
 import { Button } from 'react-daisyui';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import paginateFunc from './toArray';
 
 const Pagination = ({ setPage, page }) => {
-  const firstPage = useLocation().search?.split('=')[1];
+  const [searchParams] = useSearchParams();
+  //? When 'all' category is clicked, change the index in pagination to index 1 if the index is currently on different number say index 8;
+  const firstPage = searchParams.get('page') === '1' && 1; //* Good approach
+  // const firstPage = useLocation().search?.split('=')[1]; //! Bad approach
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
   const [index, setIndex] = useState(1);
