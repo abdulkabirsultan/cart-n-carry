@@ -12,7 +12,7 @@ const Navbar = () => {
     <div
       className={`sticky h-16 ${
         direction === 'show' ? 'top-0 backdrop-blur' : '-top-[67]'
-      } z-20 transition-all duration-1000`}
+      } z-50 transition-all duration-1000`}
     >
       {isSideBar && <Sidebar setIsSideBar={setIsSideBar} />}
       <Nav
