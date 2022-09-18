@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu } from 'react-daisyui';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import {
-  getAllProducts,
-  getProductsByCategory,
-} from '../../API-Actions/productActions';
+import { useNavigate, useParams } from 'react-router-dom';
 import category from './category';
 const Categories = () => {
-  const dispatch = useDispatch();
-  const [catName, setCatName] = useState('all');
   const navigate = useNavigate();
+  const categoryParam = useParams()?.category;
+  const catName = categoryParam?.split('-').join(' ');
   const categoryHandler = (category) => {
-    setCatName(category);
-    if (category.toLowerCase() === 'all') {
-      dispatch(getAllProducts());
-      navigate(`/products/category/all?page=1`);
-    } else {
-      const catName = category.split(' ').join('-');
-      dispatch(getProductsByCategory(category));
-      navigate(`/products/category/${catName}`);
-    }
+    const catName = category.split(' ').join('-');
+    navigate(`/products/category/${catName}`);
   };
   return (
     <div>
@@ -33,7 +21,8 @@ const Categories = () => {
           <Menu.Item
             key={i}
             className={`${
-              catName === cat.name && 'bg-[#3B82F6] hover:bg-[#3B82F6]'
+              (catName === cat.name || categoryParam === cat.name) &&
+              'bg-[#3B82F6] hover:bg-[#3B82F6]'
             } flex mr-3 md:mr-0 btn btn-xs md:btn-md justify-center md:justify-start my-1 flex-row items-center`}
             onClick={() => categoryHandler(cat.name)}
           >
