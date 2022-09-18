@@ -36,7 +36,7 @@ const Products = () => {
           search
             ? 'grid-cols-1 md:px-10'
             : ' lg:grid-cols-4 md:grid-cols-3 grid-cols-1'
-        } gap-4 mt-10 md:pr-3`}
+        } gap-4 mt-4 md:mt-10 md:pr-3`}
       >
         {!search && (
           <aside className='shadow-xl md:block md:h-screen scrollbar md:overflow-x-hidden overflow-y-scroll'>

@@ -52,3 +52,16 @@ export const getProductBySearch = createAsyncThunk(
     }
   }
 );
+
+export const getSingleProduct = createAsyncThunk(
+  'singleProduct',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await API(`/${id}`);
+      return data;
+    } catch (error) {
+      console.log(error.response);
+      thunkAPI.rejectWithValue('something went wrong');
+    }
+  }
+);

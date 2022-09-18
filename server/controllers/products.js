@@ -28,7 +28,7 @@ export const getCategories = async (req, res) => {
 
 export const getSingleProduct = async (req, res) => {
   const { id } = req.params;
-  const product = await Products.find({ id });
+  const product = await Products.find({ _id: id });
   if (!product.length) {
     throw new NotFoundError(`No item with id ${id} found`);
   }

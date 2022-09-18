@@ -7,6 +7,7 @@ import Contact from './Routes/Contact';
 import NotFound from './Routes/NotFound';
 import ProductsRoute from './Routes/Products';
 import Products from './components/Products/Products';
+import SingleProduct from './components/Products/product/SingleProduct';
 
 const App = () => {
   return (
@@ -19,9 +20,11 @@ const App = () => {
               path='/products/category/:category'
               element={<ProductsRoute />}
             />
+            <Route path='/products/search' element={<Products />} />
+            {/* <Route path='/products/category/all' element={<ProductsRoute />} /> */}
+            <Route path='/products/:category/:id' element={<SingleProduct />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/products/search' element={<Products />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
