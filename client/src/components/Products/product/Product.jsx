@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-loading-skeleton/dist/skeleton.css';
 
 import { Card } from 'react-daisyui';
 import { FaPlus, FaSearch, FaStar, FaStarHalf } from 'react-icons/fa';
