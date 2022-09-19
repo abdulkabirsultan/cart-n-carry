@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SharedLayout from './Routes/SharedLayout';
-import Home from './Routes/Home';
-import About from './Routes/About';
-import Contact from './Routes/Contact';
-import NotFound from './Routes/NotFound';
-import ProductsRoute from './Routes/Products';
+import SharedLayout from './Pages/SharedLayout';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import NotFound from './Pages/NotFound';
+import ProductsRoute from './Pages/Products';
 import Products from './components/Products/Products';
 import SingleProduct from './components/Products/product/SingleProduct';
 
