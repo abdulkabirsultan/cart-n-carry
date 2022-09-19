@@ -14,13 +14,13 @@ const Pagination = ({ setPage, page }) => {
   // const paramPage = useLocation().search?.split('=')[1]; //! Bad approach
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     setPage(index);
-    if (index !== 1) {
+    if (index) {
       navigate(`/products/category/all?page=${index}`);
     }
   }, [index]);
