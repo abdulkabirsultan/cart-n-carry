@@ -7,34 +7,29 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getAllProducts } from '../../API-Actions/productActions';
 import paginateFunc from './toArray';
 
-const Pagination = () => {
+const Pagination = ({ setPage, page }) => {
   const [searchParams] = useSearchParams();
-  //? When 'all' category is clicked, change the index in pagination to index 1 if the index is currently on different number say index 8;
-  const firstPage = searchParams.get('page') === '1' && 1; //* Good approach
-  // const firstPage = useLocation().search?.split('=')[1]; //! Bad approach
+
+  const paramPage = searchParams.get('page'); //* Good approach
+  // const paramPage = useLocation().search?.split('=')[1]; //! Bad approach
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
-  const [page, setPage] = useState(1);
   const [index, setIndex] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  useEffect(() => {
-    dispatch(getAllProducts(page));
-    navigate(`/products/category/all?page=${page}`);
-  }, [page]);
-
-  //* when category is set to all
-  useEffect(() => {
-    if (firstPage) {
-      setIndex(parseInt(firstPage));
-      return;
-    }
-  }, [firstPage]);
 
   useEffect(() => {
     setPage(index);
-    window.scrollTo({ behavior: 'smooth', top: 0 });
+    if (index !== 1) {
+      navigate(`/products/category/all?page=${index}`);
+    }
   }, [index]);
+
+  useEffect(() => {
+    window.scrollTo({ behavior: 'smooth', top: 0 });
+    setPage(parseInt(paramPage));
+    dispatch(getAllProducts(parseInt(paramPage)));
+  }, [paramPage]);
 
   return (
     <div className='flex justify-center flex-wrap relative items-center my-6'>
@@ -51,7 +46,8 @@ const Pagination = () => {
             <Button
               key={num}
               className={`mr-2 mb-3 md:mb-0 btn-sm ${
-                num === page && 'bg-[#33abdf] hover:bg-[#3ABFF8]'
+                num === (page || !paramPage) &&
+                'bg-[#33abdf] hover:bg-[#3ABFF8]'
               }`}
               onClick={() => setIndex(num)}
             >

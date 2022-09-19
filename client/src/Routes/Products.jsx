@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Products from '../components/Products/Products';
 import Search from '../components/Search/Search';
 import Pagination from '../components/Pagination/Pagination';
@@ -9,16 +9,25 @@ import {
   getAllProducts,
   getProductsByCategory,
 } from '../API-Actions/productActions';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 const ProductsRoute = () => {
   const { products } = useSelector((store) => store.products);
   const { category } = useParams();
   const navigate = useNavigate();
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
+  const [paramPage] = useSearchParams();
+
+  useEffect(() => {
+    paramPage.set('page', page);
+    setPage(parseInt(paramPage.get('page')));
+    console.log(page);
+  }, [page]);
+  console.log(paramPage.get('page'));
   useEffect(() => {
     if (category === 'all') {
       dispatch(getAllProducts(1));
-      navigate(`/products/category/all?page=1`);
+      return;
     } else if (category === 'home-decoration') {
       dispatch(getProductsByCategory(category));
     } else {
@@ -34,7 +43,7 @@ const ProductsRoute = () => {
     <>
       <Search />
       <Products />
-      {paginateCount.length > 5 && <Pagination />}
+      {paginateCount.length > 5 && <Pagination page={page} setPage={setPage} />}
     </>
   );
 };
