@@ -62,7 +62,7 @@ const Sidebar = ({ setIsSideBar }) => {
       </Menu>
       <Button
         onClick={() => setIsSideBar(false)}
-        className='absolute top-2 p-2 bg-transparent text-red-600 right-2 text-xl'
+        className='absolute btn-sm btn-error top-2 btn-outline right-2 text-xl'
       >
         <FaTimes />
       </Button>

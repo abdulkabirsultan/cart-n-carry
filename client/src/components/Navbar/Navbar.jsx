@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
-import { FaBars, FaCartPlus, FaSignInAlt } from 'react-icons/fa';
+import { FaBars, FaCartPlus, FaUserPlus } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import useScrollDirection from './ScrollDirection';
 import Sidebar from './Sidebar';
 const Navbar = () => {
   const [isSideBar, setIsSideBar] = useState(false);
   const direction = useScrollDirection();
-
+  const amount = useSelector((store) => store.cart?.amount);
   return (
     <div
       className={`sticky h-16 ${
@@ -18,7 +19,10 @@ const Navbar = () => {
       <Nav
         className={`justify-around navbar  items-center shadow-md shadow-black`}
       >
-        <Button className='md:hidden' onClick={() => setIsSideBar(!isSideBar)}>
+        <Button
+          className='md:hidden btn-sm'
+          onClick={() => setIsSideBar(!isSideBar)}
+        >
           <FaBars />
         </Button>
         <Nav.Start className='p-3'>
@@ -86,13 +90,14 @@ const Navbar = () => {
               <FaCartPlus className='text-xl ' />
               <span className='hidden lg:inline-block'>Cart</span>
               <div className=' btn absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
-                0
+                {amount || 0}
               </div>
             </Button>
           </Link>
           <Link to='/auth'>
-            <Button>
-              <FaSignInAlt /> &nbsp; Sign In
+            <Button className='text-lg'>
+              <FaUserPlus /> &nbsp;
+              <span className='hidden md:inline-block'>Sign In</span>
             </Button>
           </Link>
         </Nav.End>
