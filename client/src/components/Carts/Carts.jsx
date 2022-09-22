@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../Features/modalSlice';
-import CartModal from '../CartModal';
+import CartModal from './CartModal';
 import Cart from './Cart/Cart';
 
 const Carts = () => {
