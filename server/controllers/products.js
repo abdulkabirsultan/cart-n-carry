@@ -9,7 +9,7 @@ export const getAllProducts = async (req, res) => {
   const products = await Products.find().limit(tLimit).skip(skip);
   const totalProducts = await Products.countDocuments();
   if (!products.length) {
-    return res.send('No products available');
+    return res.json({ msg: 'No products available' });
   }
   res.status(200).json({
     products,
