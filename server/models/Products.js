@@ -8,6 +8,10 @@ const productSchema = mongoose.Schema(
     discountPercentage: Number,
     rating: Number,
     stock: Number,
+    amount: {
+      type: Number,
+      required: [true, ' please provide amount of products'],
+    },
     brand: { type: String, required: [true, 'Please Provide brand name'] },
     category: { type: String, required: [true, 'please provide a category'] },
     thumbnail: String,
