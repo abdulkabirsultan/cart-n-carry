@@ -39,7 +39,7 @@ const SingleProduct = () => {
   // const image = [...images].reverse();
   return (
     <div className='max-h-screen pt-5 px-5'>
-      <Link to={'/products/category/all'}>
+      <Link to={-1}>
         <button className='btn btn-sm md:btn-md btn-secondary ml-3 md:ml-5 mb-5'>
           Back to Products
         </button>

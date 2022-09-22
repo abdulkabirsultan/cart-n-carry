@@ -50,8 +50,8 @@ const Products = () => {
         </article>
       </section>
       {search && (
-        <Link to='/products/category/all'>
-          <button className=' btn flex mx-auto my-8'>Back to Products</button>
+        <Link to={-1}>
+          <button className=' btn flex mx-auto my-8'>Back</button>
         </Link>
       )}
     </>
