@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-const API = axios.create({ baseURL: 'http://localhost:5000/api/v1/products' });
+const API = axios.create({ baseURL: process.env.REACT_APP_SERVER_URI });
 export const getAllProducts = createAsyncThunk(
   'products',
   async (page, thunkAPI) => {
