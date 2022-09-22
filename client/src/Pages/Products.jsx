@@ -9,11 +9,10 @@ import {
   getAllProducts,
   getProductsByCategory,
 } from '../API-Actions/productActions';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 const ProductsRoute = () => {
   const { products } = useSelector((store) => store.products);
   const { category } = useParams();
-  const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const [paramPage] = useSearchParams();
@@ -21,9 +20,7 @@ const ProductsRoute = () => {
   useEffect(() => {
     paramPage.set('page', page);
     setPage(parseInt(paramPage.get('page')));
-    console.log(page);
   }, [page]);
-  console.log(paramPage.get('page'));
   useEffect(() => {
     if (category === 'all') {
       dispatch(getAllProducts(1));
@@ -36,9 +33,6 @@ const ProductsRoute = () => {
     }
   }, [category]);
   const paginateCount = paginateFunc(products);
-  // useEffect(() => {
-  //   navigate(`/products/category/all?page=${page}`);
-  // }, [page]);
   return (
     <>
       <Search />
