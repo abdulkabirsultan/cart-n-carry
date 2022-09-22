@@ -9,21 +9,21 @@ import {
   getAllProducts,
   getProductsByCategory,
 } from '../API-Actions/productActions';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 const ProductsRoute = () => {
   const { products } = useSelector((store) => store.products);
   const { category } = useParams();
-  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
-  const [paramPage] = useSearchParams();
+  // const [paramPage] = useSearchParams();
 
-  useEffect(() => {
-    paramPage.set('page', page);
-    setPage(parseInt(paramPage.get('page')));
-  }, [page]);
+  // useEffect(() => {
+  //   paramPage.set('page', page);
+  //   setPage(parseInt(paramPage.get('page')));
+  //   console.log(paramPage.get('page'));
+  // }, [page]);
   useEffect(() => {
     if (category === 'all') {
-      dispatch(getAllProducts(1));
+      dispatch(getAllProducts());
       return;
     } else if (category === 'home-decoration') {
       dispatch(getProductsByCategory(category));
@@ -37,7 +37,7 @@ const ProductsRoute = () => {
     <>
       <Search />
       <Products />
-      {paginateCount.length > 5 && <Pagination page={page} setPage={setPage} />}
+      {paginateCount.length > 5 && <Pagination />}
     </>
   );
 };
