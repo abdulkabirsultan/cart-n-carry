@@ -8,7 +8,7 @@ import NotFound from './Pages/NotFound';
 import ProductsRoute from './Pages/Products';
 import Products from './components/Products/Products';
 import SingleProduct from './components/Products/product/SingleProduct';
-
+import Carts from './components/Carts/Carts';
 const App = () => {
   return (
     <BrowserRouter>
@@ -26,6 +26,7 @@ const App = () => {
             <Route path='/products/:category/:id' element={<SingleProduct />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/cart' element={<Carts />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
