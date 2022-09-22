@@ -5,6 +5,7 @@ import { FaStar, FaStarHalf } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getSingleProduct } from '../../../API-Actions/productActions';
+import { toggleProduct } from '../../../Features/cartSlice';
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const SingleProduct = () => {
     }
   }, [id]);
   const { singleProduct, isLoading } = useSelector((store) => store?.products);
-  console.log(isLoading);
   const product = singleProduct[0];
   const [src, setSrc] = useState('');
   if (!product) {
@@ -32,6 +32,7 @@ const SingleProduct = () => {
     category,
     thumbnail,
     images,
+    _id,
   } = product;
 
   const rate = parseInt(rating.toString().split('.')[1]?.split('')[0]) < 5;
@@ -39,7 +40,9 @@ const SingleProduct = () => {
   return (
     <div className='max-h-screen pt-5 px-5'>
       <Link to={'/products/category/all'}>
-        <button className='btn btn-primary ml-10 mb-5'>Back to Products</button>
+        <button className='btn btn-sm md:btn-md btn-secondary ml-3 md:ml-5 mb-5'>
+          Back to Products
+        </button>
       </Link>
       <section className='grid gap-8 h-full grid-cols-1  md:grid-cols-2 '>
         <div>
@@ -80,7 +83,7 @@ const SingleProduct = () => {
             {title}
           </h1>
           <p className='flex items-center'>
-            <div
+            <span
               className={`inline-flex text-orange-400 ${
                 rate ? 'mr-[2px]' : 'mr-2'
               } `}
@@ -89,7 +92,7 @@ const SingleProduct = () => {
                 <FaStar key={i} />
               ))}
               {rate ? <FaStarHalf /> : <FaStar />}
-            </div>
+            </span>
             <span className='text-lg'>{rating}</span>
           </p>
           <p>
@@ -105,6 +108,14 @@ const SingleProduct = () => {
           </div>
           <p className='text-xl mb-3 font-bold'>Stock: {stock}</p>
           <p className='md:text-xl'>{description}</p>
+          <button
+            className='btn mt-3 btn-info btn-sm'
+            onClick={() =>
+              dispatch(toggleProduct({ id: _id, operation: 'add' }))
+            }
+          >
+            add to cart
+          </button>
         </div>
       </section>
       <hr />
