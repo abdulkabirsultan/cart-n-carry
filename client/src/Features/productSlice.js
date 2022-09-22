@@ -28,7 +28,6 @@ const productReducer = createSlice({
     [getAllProducts.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.products = payload;
-      console.log(payload);
     },
     [getAllProducts.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -73,11 +72,9 @@ const productReducer = createSlice({
     //? Get Single Product
 
     [getSingleProduct.pending]: (state) => {
-      console.log('pending');
       state.isLoading = true;
     },
     [getSingleProduct.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       return {
         ...state,
         isLoading: false,
