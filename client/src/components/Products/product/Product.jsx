@@ -33,7 +33,12 @@ const Product = ({ title, _id, price, rating, category, thumbnail }) => {
           />
         </div>
         <Card.Body className='cursor-default'>
-          <Card.Title tag='h2'>{title}</Card.Title>
+          <Card.Title
+            tag='h2'
+            className='text-sm font-bold md:text-base lg:text-lg'
+          >
+            {title}
+          </Card.Title>
           <p className='flex items-center'>
             <span
               className={`inline-flex text-orange-400 ${
@@ -47,7 +52,7 @@ const Product = ({ title, _id, price, rating, category, thumbnail }) => {
             </span>
             {rating}
           </p>
-          <p>${price}</p>
+          <p className='text-base text-info lg:text-lg font-bold'>${price}</p>
           <Card.Actions
             className='card-actions cursor-default justify-end'
             onClick={(e) => e.stopPropagation()}
