@@ -89,7 +89,7 @@ const Navbar = () => {
             <Button className='relative space-x-1'>
               <FaCartPlus className='text-xl ' />
               <span className='hidden lg:inline-block'>Cart</span>
-              <div className=' btn absolute -top-2 -left-6 bg-orange-600 text-white btn-sm'>
+              <div className=' btn absolute -top-2 left-8 lg:-left-5 bg-orange-600 text-white btn-xs lg:btn-sm'>
                 {amount || 0}
               </div>
             </Button>
