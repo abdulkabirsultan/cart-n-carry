@@ -40,7 +40,12 @@ export const getProductBySearch = async (req, res) => {
   const query = new RegExp(search, 'ig');
   console.log(query);
   const products = await Products.find({
-    $or: [{ title: query }, { description: query }, { category: query }],
+    $or: [
+      { title: query },
+      { description: query },
+      { category: query },
+      { brand: query },
+    ],
   });
 
   res.status(200).json({ products, nbHits: products?.length });
