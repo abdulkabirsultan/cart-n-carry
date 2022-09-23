@@ -15,7 +15,7 @@ const Carts = () => {
     <section>
       <CartModal isModal={isModal} />
       {!amount || amount < 1 ? (
-        <div className='grid place-content-center text-center h-[calc(100vh-20vh)]'>
+        <div className='grid place-content-center text-center h-screen'>
           <header className='tracking-wider uppercase mb-2 text-5xl'>
             Your cart
           </header>
