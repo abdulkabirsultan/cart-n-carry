@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { calculateTotal, getCartProducts } from '../Features/cartSlice';
+import Footer from '../components/Footer';
 
 const SharedLayout = () => {
   const { cartItems } = useSelector((store) => store.cart);
@@ -18,8 +19,8 @@ const SharedLayout = () => {
   return (
     <>
       <Navbar />
-
       <Outlet />
+      <Footer />
     </>
   );
 };

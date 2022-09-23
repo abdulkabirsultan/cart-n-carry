@@ -10,3 +10,12 @@
     border-radius: 100px;
   }
 }
+
+@layer components {
+  .foot h1 {
+    @apply md:text-xl text-lg mb-2 font-bold capitalize;
+  }
+  .foot {
+    @apply capitalize;
+  }
+}

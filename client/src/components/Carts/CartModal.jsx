@@ -9,7 +9,7 @@ const CartModal = ({ isModal }) => {
     <aside
       className={`${
         isModal ? ' scale-100' : 'scale-0'
-      } grid place-content-center place-items-center z-30 fixed top-0 left-0 bg-[rgba(0,0,0,0.7)] w-full h-full transition-all duration-300`}
+      } grid place-content-center place-items-center z-50 fixed top-0 left-0 bg-[rgba(0,0,0,0.7)] w-full h-full transition-all duration-300`}
     >
       <div className='bg-white w-4/5 max-w-md py-8 px-4 text-center text-slate-700 '>
         <h4 className='leading-normal md:text-2xl text-xl'>
