@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getAllProducts } from '../../API-Actions/productActions';
 import paginateFunc from './toArray';
 
-const Pagination = ({ setPage, page }) => {
+const Pagination = () => {
   const [searchParams] = useSearchParams();
 
   const paramPage = searchParams.get('page'); //* Good approach
@@ -15,6 +15,7 @@ const Pagination = ({ setPage, page }) => {
   const { products } = useSelector((store) => store.products);
   const paginateCount = paginateFunc(products);
   const [index, setIndex] = useState();
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,9 +28,11 @@ const Pagination = ({ setPage, page }) => {
 
   useEffect(() => {
     window.scrollTo({ behavior: 'smooth', top: 0 });
-    setPage(parseInt(paramPage));
-    dispatch(getAllProducts(parseInt(paramPage)));
-  }, [paramPage]);
+    setIndex(parseInt(paramPage));
+    if (index) {
+      dispatch(getAllProducts(index));
+    }
+  }, [paramPage, page]);
 
   return (
     <div className='flex justify-center flex-wrap relative items-center my-6'>
