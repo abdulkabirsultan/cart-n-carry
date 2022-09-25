@@ -38,7 +38,6 @@ export const getSingleProduct = async (req, res) => {
 export const getProductBySearch = async (req, res) => {
   const { search } = req.query;
   const query = new RegExp(search, 'ig');
-  console.log(query);
   const products = await Products.find({
     $or: [
       { title: query },
