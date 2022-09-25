@@ -15,7 +15,7 @@ const App = () => {
   const { user } = useAuth0();
   return (
     <BrowserRouter>
-      <main className='md:text-lg '>
+      <main className='md:text-lg'>
         <Routes>
           <Route path='/' element={<SharedLayout />}>
             <Route index element={<Home />} />
