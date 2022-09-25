@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import { openModal } from '../../Features/modalSlice';
 import CartModal from './CartModal';
 import Cart from './Cart/Cart';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Carts = () => {
+  const { user, loginWithPopup } = useAuth0();
+
   const dispatch = useDispatch();
   const {
     cart: { cartItems, amount, total },
@@ -41,9 +44,20 @@ const Carts = () => {
               <span>$ {total}</span>
             </div>
             <div className='lg:self-start col-span-1'>
-              <button className='btn btn-secondary btn-sm btn-block'>
-                Continue to checkout
-              </button>
+              {user ? (
+                <Link to='/checkout'>
+                  <button className='btn btn-secondary btn-sm btn-block'>
+                    Continue to checkout
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  className='btn btn-secondary btn-sm btn-block'
+                  onClick={() => loginWithPopup({})}
+                >
+                  Login to checkout
+                </button>
+              )}
             </div>
           </div>
         </article>

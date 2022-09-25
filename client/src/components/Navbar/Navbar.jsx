@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
-import { FaBars, FaCartPlus, FaUserPlus } from 'react-icons/fa';
+import { FaBars, FaCartPlus, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { useAuth0 } from '@auth0/auth0-react';
 import { Link, NavLink } from 'react-router-dom';
 import useScrollDirection from './ScrollDirection';
 import Sidebar from './Sidebar';
 const Navbar = () => {
   const [isSideBar, setIsSideBar] = useState(false);
   const direction = useScrollDirection();
+  const { loginWithPopup, user, isAuthenticated, logout } = useAuth0();
   const amount = useSelector((store) => store.cart?.amount);
   return (
     <div
@@ -69,18 +71,20 @@ const Navbar = () => {
                   About
                 </NavLink>
               </Menu.Item>
-              <Menu.Item>
-                <NavLink
-                  to='/contact'
-                  className={({ isActive }) =>
-                    !isActive
-                      ? 'border-inherit'
-                      : 'border-b-[3px] border-b-blue-500'
-                  }
-                >
-                  Contact
-                </NavLink>
-              </Menu.Item>
+              {user && (
+                <Menu.Item>
+                  <NavLink
+                    to='/checkout'
+                    className={({ isActive }) =>
+                      !isActive
+                        ? 'border-inherit'
+                        : 'border-b-[3px] border-b-blue-500'
+                    }
+                  >
+                    Checkout
+                  </NavLink>
+                </Menu.Item>
+              )}
             </div>
           </Menu>
         </Nav.Center>
@@ -94,12 +98,21 @@ const Navbar = () => {
               </div>
             </Button>
           </Link>
-          <Link to='/auth'>
-            <Button className='text-lg'>
+
+          {isAuthenticated ? (
+            <Button
+              className='text-base'
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              <FaSignOutAlt /> &nbsp;
+              <span className='hidden md:inline-block'>Sign Out</span>
+            </Button>
+          ) : (
+            <Button className='text-base' onClick={() => loginWithPopup()}>
               <FaUserPlus /> &nbsp;
               <span className='hidden md:inline-block'>Sign In</span>
             </Button>
-          </Link>
+          )}
         </Nav.End>
       </Nav>
     </div>

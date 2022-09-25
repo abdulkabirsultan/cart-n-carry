@@ -1,9 +1,12 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import { Menu, Button } from 'react-daisyui';
 import { FaHome, FaLandmark, FaStore, FaTimes, FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 const Sidebar = ({ setIsSideBar }) => {
   const handleClick = () => setIsSideBar(false);
+  const { user } = useAuth0();
+
   return (
     <div
       className={
@@ -47,18 +50,22 @@ const Sidebar = ({ setIsSideBar }) => {
             About
           </NavLink>
         </Menu.Item>
-        <Menu.Item>
-          <NavLink
-            onClick={handleClick}
-            to='/contact'
-            className={({ isActive }) =>
-              !isActive ? 'border-inherit' : 'border-b-[3px] border-b-blue-500'
-            }
-          >
-            <FaUser />
-            Contact
-          </NavLink>
-        </Menu.Item>
+        {user && (
+          <Menu.Item>
+            <NavLink
+              onClick={handleClick}
+              to='/checkout'
+              className={({ isActive }) =>
+                !isActive
+                  ? 'border-inherit'
+                  : 'border-b-[3px] border-b-blue-500'
+              }
+            >
+              <FaUser />
+              Checkout
+            </NavLink>
+          </Menu.Item>
+        )}
       </Menu>
       <Button
         onClick={() => setIsSideBar(false)}
