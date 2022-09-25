@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const connect = async () => {
-  await mongoose.connect('mongodb://localhost:27017/ecommerceDB');
+  await mongoose.connect(process.env.MONGO_URI);
   console.log('Database connected successfully');
 };
 
