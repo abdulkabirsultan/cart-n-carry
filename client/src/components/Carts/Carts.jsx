@@ -7,7 +7,7 @@ import Cart from './Cart/Cart';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Carts = () => {
-  const { user, loginWithPopup } = useAuth0();
+  const { user, loginWithRedirect } = useAuth0();
 
   const dispatch = useDispatch();
   const {
@@ -53,7 +53,7 @@ const Carts = () => {
               ) : (
                 <button
                   className='btn btn-secondary btn-sm btn-block'
-                  onClick={() => loginWithPopup({})}
+                  onClick={() => loginWithRedirect({})}
                 >
                   Login to checkout
                 </button>

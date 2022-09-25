@@ -9,7 +9,7 @@ import Sidebar from './Sidebar';
 const Navbar = () => {
   const [isSideBar, setIsSideBar] = useState(false);
   const direction = useScrollDirection();
-  const { loginWithPopup, user, isAuthenticated, logout } = useAuth0();
+  const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
   const amount = useSelector((store) => store.cart?.amount);
   return (
     <div
@@ -108,7 +108,7 @@ const Navbar = () => {
               <span className='hidden md:inline-block'>Sign Out</span>
             </Button>
           ) : (
-            <Button className='text-base' onClick={() => loginWithPopup()}>
+            <Button className='text-base' onClick={() => loginWithRedirect()}>
               <FaUserPlus /> &nbsp;
               <span className='hidden md:inline-block'>Sign In</span>
             </Button>
