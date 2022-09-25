@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Products from '../components/Products/Products';
 import Search from '../components/Search/Search';
 import Pagination from '../components/Pagination/Pagination';
