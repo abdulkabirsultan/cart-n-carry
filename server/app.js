@@ -21,6 +21,7 @@ app.use(cors());
 //Routes
 app.use('/api/v1/products', productRouter);
 
+app.get('/', (req, res) => res.send('<h1>cart n carry server</h1>'));
 //Routes Middleware
 app.use(notFound);
 app.use(errorHandlerMiddleware);
