@@ -7,9 +7,12 @@ import Contact from './Pages/Contact';
 import NotFound from './Pages/NotFound';
 import ProductsRoute from './Pages/Products';
 import Products from './components/Products/Products';
-import SingleProduct from './components/Products/product/SingleProduct';
+import SingleProduct from './components/Products/SingleProduct';
 import Carts from './components/Carts/Carts';
+import Checkout from './Pages/Checkout';
+import { useAuth0 } from '@auth0/auth0-react';
 const App = () => {
+  const { user } = useAuth0();
   return (
     <BrowserRouter>
       <main className='md:text-lg '>
@@ -27,6 +30,7 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/cart' element={<Carts />} />
+            <Route path='/checkout' element={user ? <Checkout /> : <Home />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
