@@ -20,12 +20,14 @@ const Products = () => {
   }, [search]);
   if (!products?.length) {
     return (
-      <>
-        <h1>no Products available</h1>{' '}
-        <Link to='/products/category/all'>
-          <button className=' btn flex mx-auto my-8'>Back to Products</button>
-        </Link>
-      </>
+      <section className='grid place-content-center text-center h-screen'>
+        <div>
+          <h1 className='text-xl uppercase'>no Products match your search</h1>
+          <Link to='/products/category/all'>
+            <button className=' btn flex mx-auto my-8'>Back to Products</button>
+          </Link>
+        </div>
+      </section>
     );
   }
   return (
