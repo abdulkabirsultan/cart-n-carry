@@ -1,0 +1,123 @@
+/* eslint-disable import/no-anonymous-default-export */
+export default [
+  {
+    src: 'https://dummyjson.com/image/i/products/11/2.jpg',
+    alt: 'perfume',
+    rotate: false,
+    category: 'fragrances',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/60/thumbnail.jpg',
+    alt: 'shoe',
+    rotate: false,
+    category: 'mens-shoes',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/61/1.jpg',
+    alt: 'watch',
+    rotate: true,
+    category: 'mens-watches',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/99/thumbnail.jpg',
+    alt: 'lighting',
+    rotate: false,
+    category: 'lighting',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/31/3.jpg',
+    alt: 'house',
+    rotate: true,
+    category: 'furniture',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/6/thumbnail.png',
+    alt: 'laptop',
+    rotate: false,
+    category: 'laptops',
+  },
+  {
+    src: 'https://dummyjson.com/image/i/products/47/thumbnail.jpeg',
+    alt: 'shoe',
+    rotate: true,
+    category: 'womens-shoes',
+  },
+];
+
+export const flashSale = [
+  {
+    _id: '6329c87f40d8352c65e4541d',
+    id: 2,
+    title: 'iPhone X',
+    description:
+      'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
+    price: 899,
+    discountPercentage: 17.94,
+    rating: 4.44,
+    stock: 34,
+    amount: 0,
+    brand: 'Apple',
+    category: 'smartphones',
+    thumbnail: 'https://dummyjson.com/image/i/products/2/thumbnail.jpg',
+  },
+  {
+    _id: '6329c87f40d8352c65e45420',
+    id: 5,
+    title: 'Huawei P30',
+    description:
+      'Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.',
+    price: 499,
+    discountPercentage: 10.58,
+    rating: 4.09,
+    stock: 32,
+    amount: 0,
+    brand: 'Huawei',
+    category: 'smartphones',
+    thumbnail: 'https://dummyjson.com/image/i/products/5/thumbnail.jpg',
+  },
+  {
+    _id: '6329c88040d8352c65e45478',
+    id: 93,
+    title: 'Automatic Motor Gas Motorcycles',
+    description:
+      '150cc 4-Stroke Motorcycle Automatic Motor Gas Motorcycles Scooter motorcycles 150cc scooter',
+    price: 1050,
+    discountPercentage: 3.34,
+    rating: 4.84,
+    stock: 127,
+    amount: 0,
+    brand: 'shock absorber',
+    category: 'motorcycle',
+    thumbnail: 'https://dummyjson.com/image/i/products/93/thumbnail.jpg',
+  },
+  {
+    _id: '6329c88040d8352c65e45477',
+    id: 92,
+    title: 'HOT SALE IN EUROPE electric racing motorcycle',
+    description:
+      'HOT SALE IN EUROPE electric racing motorcycle electric motorcycle for sale adult electric motorcycles',
+    price: 920,
+    discountPercentage: 14.4,
+    rating: 4.19,
+    stock: 22,
+    amount: 0,
+    brand: 'BRAVE BULL',
+    category: 'motorcycle',
+    thumbnail: 'https://dummyjson.com/image/i/products/92/thumbnail.jpg',
+  },
+  {
+    _id: '6329c88040d8352c65e4542b',
+    id: 16,
+    title: 'Hyaluronic Acid Serum',
+    description:
+      "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+    price: 19,
+    discountPercentage: 13.31,
+    rating: 4.83,
+    stock: 110,
+    amount: 0,
+    brand: "L'Oreal Paris",
+    category: 'skincare',
+    thumbnail: 'https://dummyjson.com/image/i/products/16/thumbnail.jpg',
+  },
+];
