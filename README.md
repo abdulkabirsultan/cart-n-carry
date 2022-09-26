@@ -3,6 +3,7 @@
 
 # Cart n Carry
 
+#### Live preview [app🚀](https://bit.ly/Cartncarry).
 Cart n carry is a shopping cart application built using React and NodeJS. It does not include every conceivable feature of an e-commerce website but provides core features common to most e-commerce websites.
 
 
