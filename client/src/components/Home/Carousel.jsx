@@ -76,6 +76,7 @@ export const FlashCarousel = () => {
   const handleClick = (_id, category) => {
     navigate(`/products/${category}/${_id}`);
     dispatch(getProductsByCategory(category));
+    window.scrollTo({ behavior: 'smooth', top: 0 });
   };
   const handleAdd = (e, id) => {
     e.stopPropagation();

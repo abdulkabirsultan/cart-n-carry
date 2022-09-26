@@ -16,7 +16,10 @@ const RecommendProduct = ({ products, id }) => {
             <div key={i}>
               <div
                 className='lg:w-[80%] h-36 cursor-pointer md:h-44 lg:h-44'
-                onClick={() => navigate(`/products/${p.category}/${p._id}`)}
+                onClick={() => {
+                  navigate(`/products/${p.category}/${p._id}`);
+                  window.scrollTo({ behavior: 'smooth', top: 0 });
+                }}
               >
                 <img
                   src={p.thumbnail}

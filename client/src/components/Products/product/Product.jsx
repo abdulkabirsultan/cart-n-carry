@@ -14,6 +14,7 @@ const Product = ({ title, _id, price, rating, category, thumbnail }) => {
   const dispatch = useDispatch();
   const handleClick = (_id) => {
     navigate(`/products/${category}/${_id}`);
+    window.scrollTo({ behavior: 'smooth', top: 0 });
     dispatch(getProductsByCategory(category));
   };
   const handleAdd = (e, id) => {
