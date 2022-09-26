@@ -23,16 +23,14 @@ const Pagination = () => {
     setPage(index);
     if (index) {
       navigate(`/products/category/all?page=${index}`);
+      dispatch(getAllProducts(index));
     }
   }, [index]);
 
   useEffect(() => {
     window.scrollTo({ behavior: 'smooth', top: 0 });
     setIndex(parseInt(paramPage));
-    if (index) {
-      dispatch(getAllProducts(index));
-    }
-  }, [paramPage, page]);
+  }, [paramPage]);
 
   return (
     <div className='flex justify-center flex-wrap relative items-center my-6'>
