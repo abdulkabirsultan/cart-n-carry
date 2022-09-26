@@ -28,8 +28,21 @@ const Navbar = () => {
           <FaBars />
         </Button>
         <Nav.Start className='p-3'>
-          <Link to='/' className='whitespace-nowrap'>
-            <h2>THE STORE</h2>
+          <Link to='/' className='h-full'>
+            <img
+              src='20220926_120858_0001.png'
+              // width={150}
+              // height={10}
+              className='w-20  md:w-36 md:h-14 '
+              alt='logo'
+            />
+            <img
+              src='20220926_120858_0001.png'
+              // width={150}
+              // height={10}
+              className='w-20  hidden'
+              alt='logo'
+            />
           </Link>
         </Nav.Start>
         <Nav.Center>
