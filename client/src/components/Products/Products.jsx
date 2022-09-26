@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useSearchParams } from 'react-router-dom';
 import { getProductBySearch } from '../../API-Actions/productActions.js';
 import Categories from '../categories/Categories.jsx';
+import Loader from '../Loader.jsx';
 import Search from '../Search/Search.jsx';
 import Product from './product/Product';
-
 const Products = () => {
   const { products } = useSelector((store) => store.products.products);
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Products = () => {
       return;
     }
   }, [search]);
-  if (!products?.length) {
+  if (!products?.length && search) {
     return (
       <section className='grid place-content-center text-center h-screen'>
         <div>
@@ -26,6 +26,15 @@ const Products = () => {
           <Link to='/products/category/all'>
             <button className=' btn flex mx-auto my-8'>Back to Products</button>
           </Link>
+        </div>
+      </section>
+    );
+  }
+  if (!products?.length) {
+    return (
+      <section className='grid place-content-center text-center h-screen'>
+        <div>
+          <Loader />
         </div>
       </section>
     );
