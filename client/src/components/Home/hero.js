@@ -46,7 +46,7 @@ export default [
 
 export const flashSale = [
   {
-    _id: '6329c87f40d8352c65e4541d',
+    _id: '6329d926cf8a37e7599b6c32',
     id: 2,
     title: 'iPhone X',
     description:
@@ -61,7 +61,7 @@ export const flashSale = [
     thumbnail: 'https://dummyjson.com/image/i/products/2/thumbnail.jpg',
   },
   {
-    _id: '6329c87f40d8352c65e45420',
+    _id: '6329d926cf8a37e7599b6c35',
     id: 5,
     title: 'Huawei P30',
     description:
@@ -76,7 +76,7 @@ export const flashSale = [
     thumbnail: 'https://dummyjson.com/image/i/products/5/thumbnail.jpg',
   },
   {
-    _id: '6329c88040d8352c65e45478',
+    _id: '6329d926cf8a37e7599b6c8d',
     id: 93,
     title: 'Automatic Motor Gas Motorcycles',
     description:
@@ -91,7 +91,7 @@ export const flashSale = [
     thumbnail: 'https://dummyjson.com/image/i/products/93/thumbnail.jpg',
   },
   {
-    _id: '6329c88040d8352c65e45477',
+    _id: '6329d926cf8a37e7599b6c8c',
     id: 92,
     title: 'HOT SALE IN EUROPE electric racing motorcycle',
     description:
@@ -106,7 +106,7 @@ export const flashSale = [
     thumbnail: 'https://dummyjson.com/image/i/products/92/thumbnail.jpg',
   },
   {
-    _id: '6329c88040d8352c65e4542b',
+    _id: '6329d926cf8a37e7599b6c40',
     id: 16,
     title: 'Hyaluronic Acid Serum',
     description:
