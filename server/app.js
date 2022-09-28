@@ -13,6 +13,7 @@ import productRouter from './routes/products.js';
 //route middleware
 import errorHandlerMiddleware from './middlewares/errorHandler.js';
 import notFound from './middlewares/not-found.js';
+import userRouter from './routes/user.js';
 const app = express();
 
 //Middlewares
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(cors());
 //Routes
 app.use('/api/v1/products', productRouter);
+app.use('/auth', userRouter);
 
 app.get('/', (req, res) => res.send('<h1>cart n carry server</h1>'));
 //Routes Middleware
