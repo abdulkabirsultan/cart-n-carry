@@ -1,4 +1,3 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 
 import {
@@ -54,9 +53,8 @@ const StripePaymentForm = () => (
 );
 
 const Checkout = () => {
-  const { user } = useAuth0();
   const { total } = useSelector((store) => store.cart);
-
+  const user = JSON.parse(localStorage.getItem('user'));
   return (
     <section className='h-screen grid place-content-center'>
       <div className='p-5  w-full'>
@@ -64,7 +62,7 @@ const Checkout = () => {
           hello, {user?.name}
         </h1>
         <p className='mb-5 text-info'>Your Total is ${total}</p>
-        <p className='text-3xl uppercase md:text-4xl whitespace-nowrap font-bold'>
+        <p className='text-2xl uppercase md:text-4xl whitespace-nowrap font-bold'>
           This is just a demo
         </p>
         <div className='mt-5 border-2 p-3'>

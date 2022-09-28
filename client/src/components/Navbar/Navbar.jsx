@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { Navbar as Nav, Button, Menu } from 'react-daisyui';
 import { FaBars, FaCartPlus, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useScrollDirection from './ScrollDirection';
 import Sidebar from './Sidebar';
+import { logout } from '../../API-Actions/userAction';
 const Navbar = () => {
   const [isSideBar, setIsSideBar] = useState(false);
   const direction = useScrollDirection();
-  const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
+  const user = localStorage.getItem('user');
+  const navigate = useNavigate();
   const amount = useSelector((store) => store.cart?.amount);
   return (
     <div
@@ -103,16 +104,13 @@ const Navbar = () => {
             </Button>
           </Link>
 
-          {isAuthenticated ? (
-            <Button
-              className='text-base'
-              onClick={() => logout({ returnTo: window.location.origin })}
-            >
+          {user ? (
+            <Button className='text-base' onClick={() => logout()}>
               <FaSignOutAlt /> &nbsp;
               <span className='hidden md:inline-block'>Sign Out</span>
             </Button>
           ) : (
-            <Button className='text-base' onClick={() => loginWithRedirect()}>
+            <Button className='text-base' onClick={() => navigate('/auth')}>
               <FaUserPlus /> &nbsp;
               <span className='hidden md:inline-block'>Sign In</span>
             </Button>

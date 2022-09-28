@@ -1,12 +1,10 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import { Menu, Button } from 'react-daisyui';
 import { FaHome, FaLandmark, FaStore, FaTimes, FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 const Sidebar = ({ setIsSideBar }) => {
   const handleClick = () => setIsSideBar(false);
-  const { user } = useAuth0();
-
+  const user = localStorage.getItem('user');
   return (
     <div
       className={

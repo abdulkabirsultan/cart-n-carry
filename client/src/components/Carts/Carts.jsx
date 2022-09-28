@@ -1,14 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { openModal } from '../../Features/modalSlice';
 import CartModal from './CartModal';
 import Cart from './Cart/Cart';
-import { useAuth0 } from '@auth0/auth0-react';
-
 const Carts = () => {
-  const { user, loginWithRedirect } = useAuth0();
-
+  const navigate = useNavigate();
+  const user = localStorage.getItem('user');
   const dispatch = useDispatch();
   const {
     cart: { cartItems, amount, total },
@@ -53,7 +51,7 @@ const Carts = () => {
               ) : (
                 <button
                   className='btn btn-secondary btn-sm btn-block'
-                  onClick={() => loginWithRedirect({})}
+                  onClick={() => navigate('/auth')}
                 >
                   Login to checkout
                 </button>
