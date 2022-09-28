@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className=' bg-secondary dark:bg-secondary-content mt-10 grid justify-center items-center p-10 md:p-12'>
       <div className='grid lg:grid-cols-5 foot md:grid-cols-3 grid-cols-2 place-content-center gap-5'>
         <div className='col-span-2 '>
-          <h1>The store</h1>
+          <img src='20220926_120858_0001.png' alt='logo' width={200} />
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
             quod laudantium voluptates numquam, quis, accusamus autem dolorem
