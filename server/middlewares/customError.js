@@ -12,3 +12,10 @@ export class NotFoundError extends CustomApiError {
     this.statusCode = StatusCodes.NOT_FOUND;
   }
 }
+
+export class UnauthorizedError extends CustomApiError {
+  constructor(message) {
+    super(message);
+    this.statusCode = StatusCodes.UNAUTHORIZED;
+  }
+}
