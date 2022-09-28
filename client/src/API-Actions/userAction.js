@@ -3,7 +3,7 @@ import axios from 'axios';
 export const registerUser = async (userDetails) => {
   try {
     const { data } = await axios.post(
-      'http://localhost:5000/auth/register',
+      `${process.env.REACT_APP_SERVER_AUTH}/register`,
       userDetails
     );
     localStorage.setItem('user', JSON.stringify(data));
@@ -15,7 +15,7 @@ export const registerUser = async (userDetails) => {
 export const loginUser = async (userDetails) => {
   try {
     const { data } = await axios.post(
-      'http://localhost:5000/auth/login',
+      `${process.env.REACT_APP_SERVER_AUTH}/login`,
       userDetails
     );
     localStorage.setItem('user', JSON.stringify(data));
