@@ -17,8 +17,8 @@ import userRouter from './routes/user.js';
 const app = express();
 
 //Middlewares
+app.use(cors({ origin: '*' }));
 app.use(express.json());
-app.use(cors());
 //Routes
 app.use('/api/v1/products', productRouter);
 app.use('/auth', userRouter);
