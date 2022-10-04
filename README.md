@@ -35,6 +35,8 @@ I have tried to replicate his API for practice sake.
 ```http
 GET https://cartncarry-server.onrender.com/api/v1/products?limit=100
 ```
+Note:Server has been changed
+
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `limit` | `Number` | limits the number of products response, if not set defaults to 10 |
@@ -44,6 +46,7 @@ GET https://cartncarry-server.onrender.com/api/v1/products?limit=100
 ```http
   GET https://cartncarry-server.onrender.com/api/v1/products/${id}
 ```
+Note:Server has been changed
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -54,6 +57,7 @@ GET https://cartncarry-server.onrender.com/api/v1/products?limit=100
 ```http
   GET https://cartncarry-server.onrender.com/api/v1/products/category/${category}
 ```
+Note:Server has been changed
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
